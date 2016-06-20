@@ -1,6 +1,6 @@
 @@疯狂打怪兽
 version::1.0
-
+copy--http://play.11h5.com/legend/game.html
 制作加载界面及loading
 
 ##配置环境
