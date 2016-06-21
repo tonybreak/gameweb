@@ -113,3 +113,8 @@ It's not a problem, you can simply igore it, or you can get rid of this error by
 
 运行node服务器，安装npm install anywhere
 启动 anywhere 端口号
+
+引擎定制工作流程
+Cocos 引擎家族向来以开源可定制作为重要的卖点之一，Cocos Creator 在本次更新中整理了 JavaScript 和 C++ 两部分引擎的定制工作流程，而且 C++ 引擎在 cocos2d-x 3.10 版本的基础上进行了精简和优化。两部分引擎现在都已经在 github 上开源，欢迎有功能定制和优化需要的朋友来 fork 和提交 Pull Request：
+
+JavaScript 引擎：https://github.com/cocos-creator/engine
