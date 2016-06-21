@@ -109,3 +109,7 @@ It's not a problem, you can simply igore it, or you can get rid of this error by
 这是正常现象，并不是问题，你可以忽略它。或者可以添加一个空的`project.json`文件来避免这个错误报告。
 
 
+更多命令请参看npm官方文档：https://www.npmjs.org/doc/
+
+运行node服务器，安装npm install anywhere
+启动 anywhere 端口号
