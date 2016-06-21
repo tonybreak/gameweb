@@ -28,7 +28,7 @@ var MenuLayer = cc.Layer.extend({
             cc.Sprite.create(res.start_s_png), //select state image
             this.onPlay, this);
         var menu = cc.Menu.create(menuItemPlay);  //7. create the menu
-        menu.setPosition(centerpos);
+        menu.setPosition(winsize.width/2, winsize.height/3);
         this.addChild(menu);
     },
 
