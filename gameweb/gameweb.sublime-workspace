@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Users/zhangjiangwei/Desktop/游戏接入",
+			"settings":
+			{
+				"buffer_size": 66,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -584,13 +592,27 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/D/gitgame/gameweb"
-	],
 	"file_history":
 	[
+		"/D/gitgame/gameweb/res/image/runners.plist",
+		"/D/MyWork/手游戏/JK-GameCenter-SDK-Android-V1.0.3/gamecenterh5-lib/res/raw/jkframe_api_meta.xml",
+		"/D/gitgame/gameweb/res/image/runner.plist",
+		"/C/Users/zhangjiangwei/Desktop/jkframe_api_meta.xml",
+		"/D/gitgame/gameweb/src/bf",
+		"/D/gitgame/gameweb/project.json",
+		"/D/gitgame/gameweb/src/resource.js",
+		"/D/gitgame/gameweb/src/PlayScene.js",
+		"/D/gitgame/gameweb/src/view/BackgroundLayer.js",
+		"/D/gitgame/gameweb/src/view/StatusLayer.js",
+		"/D/gitgame/gameweb/src/app.js",
+		"/D/gitgame/gameweb/README.md",
+		"/D/gitgame/gameweb/src/BackgroundLayer.js",
+		"/D/gitgame/gameweb/src/main.js",
+		"/D/gitgame/gameweb/index.html",
+		"/D/gitgame/gameweb/src/AnimationLayer.js",
+		"/D/gitgame/gameweb/src/StatusLayer.js",
 		"/D/gitgame/gameweb/re.md",
+		"/D/gitgame/gameweb/lib/cocos2d-js-v3.11.js",
 		"/D/Mydown/resload/index.html",
 		"/D/gitgame/lib/cocos2d-html5/cocos2d/core/CCDirectorCanvas.js",
 		"/D/gitgame/lib/cocos2d-html5/cocos2d/core/layers/CCLayer.js",
@@ -699,25 +721,7 @@
 		"/C/Windows/System32/drivers/etc/hosts.ics",
 		"/D/wamp/www/tjb3/tjb/lib/jquery-2.1.1.min.js",
 		"/D/wamp/www/test.html",
-		"/D/wamp/www/tjb/lib/Box2dWeb-2.1.a.3.min.js",
-		"/D/wamp/www/tjb/ballData.json",
-		"/C/Users/zhangjiangwei/Desktop/今日事物",
-		"/D/wamp/www/tjb/css/tjb.css",
-		"/D/wamp/www/box2d/index.html",
-		"/D/wamp/www/box2dDemo/box2dlearn/index2.html",
-		"/D/wamp/www/luck10-7/luck2/js/Engin.js",
-		"/C/Users/zhangjiangwei/Desktop/bindInput/bindInput.js",
-		"/C/Users/zhangjiangwei/Desktop/pingan_psr201603161640/Recording_20160316_1640.mht",
-		"/D/wamp/www/tjb/index.html",
-		"/C/Users/zhangjiangwei/Desktop/tjb/index.html",
-		"/C/Users/zhangjiangwei/Desktop/tjb/js/Engin.js",
-		"/D/wamp/www/matter-js-master1/matter-js-master/matter-js-master/demo/js/Demo.js",
-		"/D/wamp/www/matter-js-master1/matter-js-master/matter-js-master/demo/js/Examples.js",
-		"/D/SVN/624弹珠最后/624弹珠最后/碰撞.swf",
-		"/D/wamp/www/matter-js-master1/matter-js-master/matter-js-master/src/constraint/MouseConstraint.js",
-		"/D/wamp/www/crazycheckpoints/js/duobao.js",
-		"/D/MyWork/手游戏/JK-GameCenter-SDK-Android-V1.0.3/gamecenterh5-lib/res/raw/jkframe_api_meta.xml",
-		"/D/wamp/www/crazycheckpoints/index.html"
+		"/D/wamp/www/tjb/lib/Box2dWeb-2.1.a.3.min.js"
 	],
 	"find":
 	{
@@ -893,8 +897,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/zhangjiangwei/Desktop/游戏接入",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
