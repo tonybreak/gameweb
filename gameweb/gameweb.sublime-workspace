@@ -526,14 +526,6 @@
 				"buffer_size": 66,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 4854,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -600,18 +592,12 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/D/gitgame/gameweb",
-		"/D/gitgame/gameweb/lib",
-		"/D/gitgame/gameweb/lib/cocos2d-html5",
-		"/D/gitgame/gameweb/res",
-		"/D/gitgame/gameweb/src",
-		"/D/gitgame/gameweb/src/view",
-		"/D/gitgame/gameweb/src/view/ui"
-	],
 	"file_history":
 	[
+		"/D/gitgame/gameweb/res/image/runners.plist",
+		"/D/MyWork/手游戏/JK-GameCenter-SDK-Android-V1.0.3/gamecenterh5-lib/res/raw/jkframe_api_meta.xml",
+		"/D/gitgame/gameweb/res/image/runner.plist",
+		"/C/Users/zhangjiangwei/Desktop/jkframe_api_meta.xml",
 		"/D/gitgame/gameweb/src/bf",
 		"/D/gitgame/gameweb/project.json",
 		"/D/gitgame/gameweb/src/resource.js",
@@ -735,11 +721,7 @@
 		"/C/Windows/System32/drivers/etc/hosts.ics",
 		"/D/wamp/www/tjb3/tjb/lib/jquery-2.1.1.min.js",
 		"/D/wamp/www/test.html",
-		"/D/wamp/www/tjb/lib/Box2dWeb-2.1.a.3.min.js",
-		"/D/wamp/www/tjb/ballData.json",
-		"/C/Users/zhangjiangwei/Desktop/今日事物",
-		"/D/wamp/www/tjb/css/tjb.css",
-		"/D/wamp/www/box2d/index.html"
+		"/D/wamp/www/tjb/lib/Box2dWeb-2.1.a.3.min.js"
 	],
 	"find":
 	{
@@ -915,7 +897,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -942,38 +924,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "README.md",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 4854,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4372,
-								4372
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_encoding": "UTF-8",
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3153.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
