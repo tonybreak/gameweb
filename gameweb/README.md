@@ -118,3 +118,9 @@ It's not a problem, you can simply igore it, or you can get rid of this error by
 Cocos 引擎家族向来以开源可定制作为重要的卖点之一，Cocos Creator 在本次更新中整理了 JavaScript 和 C++ 两部分引擎的定制工作流程，而且 C++ 引擎在 cocos2d-x 3.10 版本的基础上进行了精简和优化。两部分引擎现在都已经在 github 上开源，欢迎有功能定制和优化需要的朋友来 fork 和提交 Pull Request：
 
 JavaScript 引擎：https://github.com/cocos-creator/engine
+
+搭建webSocket+nodejs
+参考http://www.open-open.com/lib/view/open1402479198587.html
+安装nodejs +npm
+npm install --save express
+npm install --save soket.io
