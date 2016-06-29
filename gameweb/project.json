@@ -1,6 +1,5 @@
 {
   "project_type": "javascript",
-
   "debugMode" : 1,
   "showFPS" : true,
   "frameRate" : 60,
@@ -8,10 +7,11 @@
   "renderMode" : 0,
   "modules" : ["cocos2d"],
   "jsList" : [
-  "src/resource.js",
-  "src/app.js",
-  "src/view/PlayScene.js",
-  "src/view/BackgroundLayer.js",
-  "src/view/AnimationLayer.js"
-]
+    "src/resource.js",
+    "src/app.js",
+    "src/view/picFrameCache.js",
+    "src/view/PlayScene.js",
+    "src/view/BackgroundLayer.js",
+    "src/view/AnimationLayer.js"
+  ]
 }

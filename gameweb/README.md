@@ -124,3 +124,5 @@ JavaScript 引擎：https://github.com/cocos-creator/engine
 安装nodejs +npm
 npm install --save express
 npm install --save soket.io
+
+
