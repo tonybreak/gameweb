@@ -27,23 +27,49 @@ var AnimationLayer = cc.Layer.extend({
 		sp1.setPosition(50,500);
 		spBatch.addChild(sp1,3);
 		sp1.runAction(animate.repeatForever());
-		// this.loadAllPic();
+		this.loadAllPic();
 	},
+	animatPic: function(){
 
+	},
 	loadAllPic: function () {
 		var LOADINGBARPRONUM = 1;
 		var LOADINGBAR_TAG = 99912;
 
 		var allpic= {
-			mobs1_png: "../res/image/pic/guard/mobs1.png",
-			mobs2_png: "../res/image/pic/guard/mobs2.png",
-			mobs3_png: "../res/image/pic/guard/mobs3.png",
-			mobs4_png: "../res/image/pic/guard/mobs4.png",
-			mobs5_png: "../res/image/pic/guard/mobs5.png",
-			mobs6_png: "../res/image/pic/guard/mobs6.png",
+			mobs1_png: "res/image/pic/guard/mobs1.png",
+			mobs2_png: "res/image/pic/guard/mobs2.png",
+			// mobs3_png: "res/image/pic/guard/mobs3.png",
+			// mobs4_png: "res/image/pic/guard/mobs4.png",
+			// mobs5_png: "res/image/pic/guard/mobs5.png",
+			// mobs6_png: "res/image/pic/guard/mobs6.png",
 		};
 
-		//picFrameCache.setCachePlist(allplist);
+		for(var key = 0 in allpic){
+	        cc.textureCache.addImage(allpic[key],function(){
+
+	        	var spriteFrames = [];
+	        	var resPlist = res["mobs"+key+"_plist"];
+	        	console.log(resPlist)
+	        	/*cc.spriteFrameCache.addSpriteFrames(res[]);
+	        	for(var n=0;n<10;n++){
+	        		var png = "mobs"+n+"_0"+n+".png";
+		        	var frames = cc.spriteFrameCache.getSpriteFrame(png);
+		        	if(frames) spriteFrames.push(frames);
+	        	}
+				var animation = new cc.Animation(spriteFrames,0.2);
+				// var animation2 = new cc.Animation(spriteFrames, 0.2);
+				// var animation2 = new cc.Animation(spriteFrames, 0.2, 2);
+				var action = cc.animate(animation);
+				var sp = new cc.Sprite.create(frames);
+				this.addChild(sp,4);
+				var _x = Math.random()*300+100;
+				var _y = Math.random()*500+100;
+				sp.setPosition(_x,_y);
+				sp.runAction(action.repeatForever());*/
+	        	// var sp1 = new cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("mobs1_01.png"));
+	        },this);
+	    }
 		//picFrameCache.setCachePic(allpic,function(){
 
 		//});

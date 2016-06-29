@@ -1,0 +1,249 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "var AnimationLayer = cc.Layer.extend({\n\tprocess:0,\n\tsprite:null,\n\tsize:cc.winSize,\n\tctor:function () {\n\t\tthis._super();\n\t\tthis.init();\n\t},\n\tinit: function () {\n\n\t\tcc.spriteFrameCache.addSpriteFrames(res.guard1_plist);\n\n\t\t// var sp=new cc.Sprite(cc.spriteFrameCache.getSpriteFrame(\"guard1_01.png\"));\n\t\t// this.addChild(sp);\n\t\t// sp.setPosition(250,210);\n\t\tvar frames = [];\n\t\tfor(var n =1;n<5;n++){\n\t\t\tvar sf = cc.spriteFrameCache.getSpriteFrame(\"guard1_0\"+n+\".png\");\n\t\t\tframes.push(sf);\n\t\t}\n\t\tvar animation = new cc.Animation(frames,0.2);\n\t\tvar animate=new cc.animate(animation);\n\n\t\tvar spBatch = new cc.SpriteBatchNode(res.guard1_png);\n\t\tthis.addChild(spBatch,1);\n\t\tvar sp1 = new cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame(\"guard1_01.png\"));\n\t\tsp1.setPosition(50,500);\n\t\tspBatch.addChild(sp1,3);\n\t\tsp1.runAction(animate.repeatForever());\n\t\t// this.loadAllPic();\n\t},\n\n\tloadAllPic: function () {\n\t\tvar LOADINGBARPRONUM = 1;\n\t\tvar LOADINGBAR_TAG = 99912;\n\n\t\tvar allpic= {\n\t\t\tmobs1_png: \"../res/image/pic/guard/mobs1.png\",\n\t\t\tmobs2_png: \"../res/image/pic/guard/mobs2.png\",\n\t\t\tmobs3_png: \"../res/image/pic/guard/mobs3.png\",\n\t\t\tmobs4_png: \"../res/image/pic/guard/mobs4.png\",\n\t\t\tmobs5_png: \"../res/image/pic/guard/mobs5.png\",\n\t\t\tmobs6_png: \"../res/image/pic/guard/mobs6.png\",\n\t\t};\n\n\t\tpicFrameCache.setCachePlist(allplist,function(){\n\t\t\t\n\t\t});\n\t\t//picFrameCache.setCachePic(allpic,function(){\n\n\t\t//});\n\t\t// cc.spriteFrameCache.addSpriteFrames(\"../res/image/plist/guard1.plist\",\"../res/image/guard/guard1.png\");\n\t\t//var _color = new cc.color(255,255,255,255);\n\t\t//picFrameCache.setAllCache();\n\t\t//for(var i=0;i<1;i++){\n\t\t//this.drawProgress('tp'+i,50,500,100,10,_color,_color,_color);\n\t\t//cc.textureCache.addImageAsync(allpic[i],this.callback,this);\n\t\t//}\n\t},\n\tinitloadingbar : function(sp_loading){\n\n\t},\n\tcallback: function () {i\n\t\tthis.process++;\n\n\t\tvar val={\n\t\t\t\"x\":50,\n\t\t\t\"y\":500,\n\t\t\t\"width\":100,\n\t\t\t\"height\":10,\n\t\t\t\"borderColor\":cc.color(225,0,0,255),\n\t\t\t\"border\":5,\n\t\t\t\"fillColor\":cc.color(255,0,0,0)\n\t\t}\n\n\t\t//this.drawProgress(1,width,100,width,50,cc.color(225,0,0,255),5,cc.color(255,0,0,0));\n\n\t\tvar np = this.process*100/7;\n\n\t\t//this.drawProgress(2,width,100,100*(np/100),50,cc.color(255,0,0,255),5,cc.color(255,0,0,25));\n\n\t\tif(np==100){\n\t\t\t//this.removeChild(100,true);\n\t\t\t// cc.spriteFrameCache.addSpriteFrames(\"../res/image/plist/guard1.plist\");\n\t\t\t// var sp = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame(\"../res/image/guard/guard1.png\"));\n\t\t\tsp.setPosition(cc.winSize/2,cc.winSize.height/2);\n\t\t\t//var sp = new cc.Sprite(\"../res/image/guard/guard1.png\");\n\t\t\tthis.addChild(sp);\n\t\t\t/* var frames=[];\n\t\t\t for(var n=1;n<10;n++)\n\t\t\t {\n\t\t\t var sf=cc.spriteFrameCache.getSpriteFrame(\"kick0\"+n+\".png\");\n\t\t\t frames.push(sf);\n\t\t\t }\n\t\t\t var animation=new cc.Animation(frames,0.2);\n\t\t\t var animate1=new cc.animate(animation);*/\n\t\t}\n\t},\n\tdrawProgress:function(val){\n\t\tval.tag = val.tag || \"\";\n\t\tval.x = val.x || 0;\n\t\tval.y = val.y || 0;\n\t\tval.width = val.width || 100;\n\t\tval.height = val.height || 10;\n\t\tval.borderColor = val.borderColor || cc.color(255,0,0,255);\n\t\tval.border = val.border || cc.color(255,0,0,255);\n\t\tval.fillColor = val.fillColor || cc.color(255,0,0,255);\n\t\tif(this.getChildByTag(tag)!=null){\n\t\t\tthis.removeChildByTag(tag);\n\t\t}\n\t\tvar rect = new cc.DrawNode();\n\t\tthis.setTag(rect);\n\t\trect.setTag(tag);\n\t\tvar points = [\n\t\t\tcc.p(x,y),\n\t\t\tcc.p(x+width,y),\n\t\t\tcc.p(x+width,y+height),\n\t\t\tcc.p(x,y+height)\n\t\t];\n\t\trect.drawPoly(points,fillColor,border,borderColor);\n\t\tthis.addChild(rect);\n\t},\n\n});",
+			"file": "gameweb/src/view/AnimationLayer.js",
+			"file_size": 3491,
+			"file_write_time": 131116553908313303,
+			"settings":
+			{
+				"buffer_size": 3511,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gameweb/src/view/picFrameCache.js",
+			"settings":
+			{
+				"buffer_size": 880,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/gitgame/gameweb/gameweb",
+		"/D/gitgame/gameweb/gameweb/src",
+		"/D/gitgame/gameweb/gameweb/src/view"
+	],
+	"file_history":
+	[
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "gameweb/src/view/AnimationLayer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3511,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1344,
+								1344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 780.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "gameweb/src/view/picFrameCache.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 880,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								397,
+								410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "gw.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
