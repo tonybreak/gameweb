@@ -41,7 +41,7 @@ var AnimationLayer = cc.Layer.extend({
 			//创建精灵帧缓冲
 			cc.spriteFrameCache.addSpriteFrames(picPlist);
 			spriteFrames = [];
-			for(var n=s;n<l;n++){
+			for(var n=0;n<=l;n++){
 				var png = obj.picName+"_0"+n+".png";
 		    	var frames = cc.spriteFrameCache.getSpriteFrame(png);
 		    	if(frames) {
@@ -53,7 +53,7 @@ var AnimationLayer = cc.Layer.extend({
 			action = cc.animate(animation);
 			sp = new cc.Sprite.create(frames);
 			self.addChild(sp,4);
-			var _x = Math.random()*300+150;
+			var _x = Math.random()*250+100;
 			var _y = Math.random()*300+250;
 			sp.setPosition(_x,_y);
 			sp.runAction(action.repeatForever());
@@ -64,29 +64,51 @@ var AnimationLayer = cc.Layer.extend({
 		var LOADINGBAR_TAG = 99912;
 
 		var allpic = {
-			mobs1_pic : "res/image/pic/guard/mobs1.png",
-			// mobs1_plist: "res/image/pic/guard/mobs1.png",
-			// mobs2_plist: "res/image/pic/guard/mobs2.png",
-			// mobs3_plist: "res/image/pic/guard/mobs3.png",
-			// mobs4_plist: "res/image/pic/guard/mobs4.png",
-			// mobs5_plist: "res/image/pic/guard/mobs5.png",
-			// mobs6_plist: "res/image/pic/guard/mobs6.png",
+			m1:{
+				l : 5,
+				picName : "mobs1",
+				picPlist : res.mobs1_plist,
+				url : "res/image/pic/guard/mobs1.png",
+			},
+			
+			m2:{
+				l : 5,
+				picName : "mobs2",
+				picPlist : res.mobs2_plist,
+				url : "res/image/pic/guard/mobs2.png",
+			},
+			m3:{
+				l : 5,
+				picName : "mobs3",
+				picPlist : res.mobs3_plist,
+				url : "res/image/pic/guard/mobs3.png",
+			},
+			m4:{
+				l : 5,
+				picName : "mobs6",
+				picPlist : res.mobs6_plist,
+				url : "res/image/pic/guard/mobs4.png",
+			},
+			m5:{
+				l : 5,
+				picName : "mobs7",
+				picPlist : res.mobs5_plist,
+				url : "res/image/pic/guard/mobs5.png",
+			},
+			m6:{
+				l : 5,
+				picName : "mobs",
+				picPlist : res.mobs6_plist,
+				url : "res/image/pic/guard/mobs6.png",
+			},
 		};
-		var allPlis = {
-			mobs1_plist : "res/image/pic/guard/mobs1.plist",
-		};
-		var self = this;
-		var val = {
-			url : allpic.mobs1_pic,
-			picName : "mobs1",
-			picPlist : res.mobs1_plist,
-			s : 0,
-			l : 5,
-		};
-		this.animatPic(val);	
+		
+		for(o in allpic){
+			// console.log(allpic[o]);
+			this.animatPic(allpic[o]);
+		}
 		//var _color = new cc.color(255,255,255,255);
 		//picFrameCache.setAllCache();
-		//for(var i=0;i<1;i++){
 		//this.drawProgress('tp'+i,50,500,100,10,_color,_color,_color);
 		
 	},
