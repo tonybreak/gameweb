@@ -2,6 +2,7 @@ var AnimationLayer = cc.Layer.extend({
 	process:0,
 	sprite:null,
 	size:cc.winSize,
+	allPlisArr : [],
 	ctor:function () {
 		this._super();
 		this.init();
@@ -29,57 +30,65 @@ var AnimationLayer = cc.Layer.extend({
 		sp1.runAction(animate.repeatForever());
 		this.loadAllPic();
 	},
-	animatPic: function(){
-
+	animatPic: function(obj){
+		var url = (obj.url) ? ( obj.url ) : ( null );
+		var picName =  (obj.picName) ? (obj.picName) : ( null );
+		var picPlist =  (obj.picPlist) ? (obj.picPlist) : ( null );
+		var s = obj.s; 
+		var l = obj.l;
+		var self = this;
+		cc.textureCache.addImage(url,function(){
+			//创建精灵帧缓冲
+			cc.spriteFrameCache.addSpriteFrames(picPlist);
+			spriteFrames = [];
+			for(var n=s;n<l;n++){
+				var png = obj.picName+"_0"+n+".png";
+		    	var frames = cc.spriteFrameCache.getSpriteFrame(png);
+		    	if(frames) {
+		    		spriteFrames.push(frames);
+		    	}
+			}
+			animation = new cc.Animation(spriteFrames,0.2);
+			// var animation2 = new cc.Animation(spriteFrames, 0.2, 2);
+			action = cc.animate(animation);
+			sp = new cc.Sprite.create(frames);
+			self.addChild(sp,4);
+			var _x = Math.random()*300+150;
+			var _y = Math.random()*300+250;
+			sp.setPosition(_x,_y);
+			sp.runAction(action.repeatForever());
+		});
 	},
 	loadAllPic: function () {
 		var LOADINGBARPRONUM = 1;
 		var LOADINGBAR_TAG = 99912;
 
-		var allpic= {
-			mobs1_png: "res/image/pic/guard/mobs1.png",
-			mobs2_png: "res/image/pic/guard/mobs2.png",
-			// mobs3_png: "res/image/pic/guard/mobs3.png",
-			// mobs4_png: "res/image/pic/guard/mobs4.png",
-			// mobs5_png: "res/image/pic/guard/mobs5.png",
-			// mobs6_png: "res/image/pic/guard/mobs6.png",
+		var allpic = {
+			mobs1_pic : "res/image/pic/guard/mobs1.png",
+			// mobs1_plist: "res/image/pic/guard/mobs1.png",
+			// mobs2_plist: "res/image/pic/guard/mobs2.png",
+			// mobs3_plist: "res/image/pic/guard/mobs3.png",
+			// mobs4_plist: "res/image/pic/guard/mobs4.png",
+			// mobs5_plist: "res/image/pic/guard/mobs5.png",
+			// mobs6_plist: "res/image/pic/guard/mobs6.png",
 		};
-
-		for(var key = 0 in allpic){
-	        cc.textureCache.addImage(allpic[key],function(){
-
-	        	var spriteFrames = [];
-	        	var resPlist = res["mobs"+key+"_plist"];
-	        	console.log(resPlist)
-	        	/*cc.spriteFrameCache.addSpriteFrames(res[]);
-	        	for(var n=0;n<10;n++){
-	        		var png = "mobs"+n+"_0"+n+".png";
-		        	var frames = cc.spriteFrameCache.getSpriteFrame(png);
-		        	if(frames) spriteFrames.push(frames);
-	        	}
-				var animation = new cc.Animation(spriteFrames,0.2);
-				// var animation2 = new cc.Animation(spriteFrames, 0.2);
-				// var animation2 = new cc.Animation(spriteFrames, 0.2, 2);
-				var action = cc.animate(animation);
-				var sp = new cc.Sprite.create(frames);
-				this.addChild(sp,4);
-				var _x = Math.random()*300+100;
-				var _y = Math.random()*500+100;
-				sp.setPosition(_x,_y);
-				sp.runAction(action.repeatForever());*/
-	        	// var sp1 = new cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("mobs1_01.png"));
-	        },this);
-	    }
-		//picFrameCache.setCachePic(allpic,function(){
-
-		//});
-		// cc.spriteFrameCache.addSpriteFrames("../res/image/plist/guard1.plist","../res/image/guard/guard1.png");
+		var allPlis = {
+			mobs1_plist : "res/image/pic/guard/mobs1.plist",
+		};
+		var self = this;
+		var val = {
+			url : allpic.mobs1_pic,
+			picName : "mobs1",
+			picPlist : res.mobs1_plist,
+			s : 0,
+			l : 5,
+		};
+		this.animatPic(val);	
 		//var _color = new cc.color(255,255,255,255);
 		//picFrameCache.setAllCache();
 		//for(var i=0;i<1;i++){
 		//this.drawProgress('tp'+i,50,500,100,10,_color,_color,_color);
-		//cc.textureCache.addImageAsync(allpic[i],this.callback,this);
-		//}
+		
 	},
 	initloadingbar : function(sp_loading){
 
