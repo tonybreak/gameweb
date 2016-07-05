@@ -9,11 +9,7 @@ var AnimationLayer = cc.Layer.extend({
 	},
 	init: function () {
 
-		cc.spriteFrameCache.addSpriteFrames(res.guard1_plist);
-
-		// var sp=new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("guard1_01.png"));
-		// this.addChild(sp);
-		// sp.setPosition(250,210);
+		cc.spriteFrameCache.addSpriteFrames("../res/image/pic/guard/guard1.plist");//res.guard1_plist
 		var frames = [];
 		for(var n =1;n<5;n++){
 			var sf = cc.spriteFrameCache.getSpriteFrame("guard1_0"+n+".png");
@@ -29,6 +25,30 @@ var AnimationLayer = cc.Layer.extend({
 		spBatch.addChild(sp1,3);
 		sp1.runAction(animate.repeatForever());
 		this.loadAllPic();
+		this.createLabel();
+	},
+	createLabel : function(){
+		var self = this;
+		var normalText = [
+            // "风行者Lv.119",
+            "武神Lv.28",            
+        ];
+
+        normalText.forEach(function(text, i){
+            var LabelTTF = new cc.LabelTTF();
+            LabelTTF.setString(text);
+            // LabelTTF.setPosition(30 + 150 * (i/4|0), 300 - (i%4) * 60);
+            LabelTTF.setPosition(30, 300);
+            LabelTTF.setAnchorPoint(0,1);
+            LabelTTF.boundingWidth = 120;
+            LabelTTF.boundingHeight = 0;
+            // LabelTTF.enableStroke(cc.color(0, 0, 0, 1), 3.0);
+            // if (cc.sys.os === cc.sys.OS_WP8)
+                // LabelTTF.setFontName("fonts/arialuni.ttf");
+            // else if(cc.sys.os === cc.sys.OS_WINRT)
+                // LabelTTF.setFontName("DengXian");
+            self.addChild(LabelTTF);
+        });
 	},
 	animatPic: function(obj){
 		var url = (obj.url) ? ( obj.url ) : ( null );
@@ -53,10 +73,17 @@ var AnimationLayer = cc.Layer.extend({
 			action = cc.animate(animation);
 			sp = new cc.Sprite.create(frames);
 			self.addChild(sp,4);
-			var _x = Math.random()*250+100;
-			var _y = Math.random()*300+250;
-			sp.setPosition(_x,_y);
+			var _x1 = Math.random()*250+100;
+			var _y1 = Math.random()*300+250;
+			var _x2 = Math.random()*250+100;
+			var _y2 = Math.random()*300+250;
+			sp.setPosition(_x1,_y1);
 			sp.runAction(action.repeatForever());
+			var act = cc.sequence(
+				cc.moveTo(5,cc.p(_x2,_y2)),
+				cc.moveTo(5,cc.p(_x1,_y1))
+				);
+	        sp.runAction(act.repeatForever());
 		});
 	},
 	loadAllPic: function () {
@@ -110,10 +137,8 @@ var AnimationLayer = cc.Layer.extend({
 		//var _color = new cc.color(255,255,255,255);
 		//picFrameCache.setAllCache();
 		//this.drawProgress('tp'+i,50,500,100,10,_color,_color,_color);
-		
 	},
 	initloadingbar : function(sp_loading){
-
 	},
 	callback: function () {i
 		this.process++;

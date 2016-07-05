@@ -1,26 +1,11 @@
-var StatusLayer = cc.Layer.extend({
-	labelCoin:null,
-	labelMeter:null,
-	coins:0,
-
-	ctor:function(){
-		this._super();
-		this.init();
-	},
-
-	init:function(){
-		this._super();
-		/*var winsize = cc.director.getWinSize();
-		this.labelCoin = cc.LabelTTF.create("Coins:0","Helvetica",20);
-		this.labelCoin.setColor(cc.color(0,0,0));
-		this.labelCoin.setPosition(cc.p(70,winsize.height-20));
-		this.addChild(this.labelCoin);
-		this.labelMeter = cc.LabelTTF.create("0M","Helvetica",20);
-		this.labelMeter.setPosition(cc.p(winsize.width - 70,winsize.height - 20));
-		this.addChild(this.labelMeater);*/
-		this.itemArr = new Array();
+var HelloWorldLayer = cc.Layer.extend({
+    sprite: null,
+    itemArr: null,
+    ctor: function () {
+        this._super();
+        this.itemArr = new Array();
         // 初始化10个子layer，每一项的显示
-        /*for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 10; i++) {
             var layer = new cc.LayerColor();
             layer.width = cc.winSize.width/2 -30;
             // layer.width = 100;
@@ -38,6 +23,28 @@ var StatusLayer = cc.Layer.extend({
             this.itemArr[i].setPosition((scrollLayer.width/2-this.itemArr[i].width/2),15+(this.itemArr[i].height+15)*i);
             scrollLayer.addChild(this.itemArr[i]);
         }
-        this.addChild(scrollLayer);*/
-	}
-})
+        this.addChild(scrollLayer);
+        //处理事件
+        cc.eventManager.addListener({
+            event:cc.EventListener.TOUCH_ONE_BY_ONE,
+            // swallowTouches:true,
+            onTouchBegan:this.touchbegan,
+            onTouchMoved:this.touchmoved,
+            onTouchEned:this.touchended
+        },this);
+        return true;
+    },
+    touchbegan:function () {
+        cc.log("touch began");
+        // 记录触摸起始点
+    },
+    touchmoved:function () {
+        cc.log("touch moved");
+        // 1.计算手指滑动的纵向距离
+        // 2.使scrollLayer的y坐标减去手指滑动的距离
+    },
+    touchended:function () {
+        cc.log("touch ended");
+    }
+
+});
