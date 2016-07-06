@@ -3,27 +3,60 @@
 	{
 		"selected_items":
 		[
+			[
+				"s_c",
+				"s_Cowboy_png"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "var AnimationLayer = cc.Layer.extend({\n\tprocess:0,\n\tsprite:null,\n\tsize:cc.winSize,\n\tctor:function () {\n\t\tthis._super();\n\t\tthis.init();\n\t},\n\tinit: function () {\n\n\t\tcc.spriteFrameCache.addSpriteFrames(res.guard1_plist);\n\n\t\t// var sp=new cc.Sprite(cc.spriteFrameCache.getSpriteFrame(\"guard1_01.png\"));\n\t\t// this.addChild(sp);\n\t\t// sp.setPosition(250,210);\n\t\tvar frames = [];\n\t\tfor(var n =1;n<5;n++){\n\t\t\tvar sf = cc.spriteFrameCache.getSpriteFrame(\"guard1_0\"+n+\".png\");\n\t\t\tframes.push(sf);\n\t\t}\n\t\tvar animation = new cc.Animation(frames,0.2);\n\t\tvar animate=new cc.animate(animation);\n\n\t\tvar spBatch = new cc.SpriteBatchNode(res.guard1_png);\n\t\tthis.addChild(spBatch,1);\n\t\tvar sp1 = new cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame(\"guard1_01.png\"));\n\t\tsp1.setPosition(50,500);\n\t\tspBatch.addChild(sp1,3);\n\t\tsp1.runAction(animate.repeatForever());\n\t\t// this.loadAllPic();\n\t},\n\n\tloadAllPic: function () {\n\t\tvar LOADINGBARPRONUM = 1;\n\t\tvar LOADINGBAR_TAG = 99912;\n\n\t\tvar allpic= {\n\t\t\tmobs1_png: \"../res/image/pic/guard/mobs1.png\",\n\t\t\tmobs2_png: \"../res/image/pic/guard/mobs2.png\",\n\t\t\tmobs3_png: \"../res/image/pic/guard/mobs3.png\",\n\t\t\tmobs4_png: \"../res/image/pic/guard/mobs4.png\",\n\t\t\tmobs5_png: \"../res/image/pic/guard/mobs5.png\",\n\t\t\tmobs6_png: \"../res/image/pic/guard/mobs6.png\",\n\t\t};\n\n\t\tpicFrameCache.setCachePlist(allplist,function(){\n\t\t\t\n\t\t});\n\t\t//picFrameCache.setCachePic(allpic,function(){\n\n\t\t//});\n\t\t// cc.spriteFrameCache.addSpriteFrames(\"../res/image/plist/guard1.plist\",\"../res/image/guard/guard1.png\");\n\t\t//var _color = new cc.color(255,255,255,255);\n\t\t//picFrameCache.setAllCache();\n\t\t//for(var i=0;i<1;i++){\n\t\t//this.drawProgress('tp'+i,50,500,100,10,_color,_color,_color);\n\t\t//cc.textureCache.addImageAsync(allpic[i],this.callback,this);\n\t\t//}\n\t},\n\tinitloadingbar : function(sp_loading){\n\n\t},\n\tcallback: function () {i\n\t\tthis.process++;\n\n\t\tvar val={\n\t\t\t\"x\":50,\n\t\t\t\"y\":500,\n\t\t\t\"width\":100,\n\t\t\t\"height\":10,\n\t\t\t\"borderColor\":cc.color(225,0,0,255),\n\t\t\t\"border\":5,\n\t\t\t\"fillColor\":cc.color(255,0,0,0)\n\t\t}\n\n\t\t//this.drawProgress(1,width,100,width,50,cc.color(225,0,0,255),5,cc.color(255,0,0,0));\n\n\t\tvar np = this.process*100/7;\n\n\t\t//this.drawProgress(2,width,100,100*(np/100),50,cc.color(255,0,0,255),5,cc.color(255,0,0,25));\n\n\t\tif(np==100){\n\t\t\t//this.removeChild(100,true);\n\t\t\t// cc.spriteFrameCache.addSpriteFrames(\"../res/image/plist/guard1.plist\");\n\t\t\t// var sp = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame(\"../res/image/guard/guard1.png\"));\n\t\t\tsp.setPosition(cc.winSize/2,cc.winSize.height/2);\n\t\t\t//var sp = new cc.Sprite(\"../res/image/guard/guard1.png\");\n\t\t\tthis.addChild(sp);\n\t\t\t/* var frames=[];\n\t\t\t for(var n=1;n<10;n++)\n\t\t\t {\n\t\t\t var sf=cc.spriteFrameCache.getSpriteFrame(\"kick0\"+n+\".png\");\n\t\t\t frames.push(sf);\n\t\t\t }\n\t\t\t var animation=new cc.Animation(frames,0.2);\n\t\t\t var animate1=new cc.animate(animation);*/\n\t\t}\n\t},\n\tdrawProgress:function(val){\n\t\tval.tag = val.tag || \"\";\n\t\tval.x = val.x || 0;\n\t\tval.y = val.y || 0;\n\t\tval.width = val.width || 100;\n\t\tval.height = val.height || 10;\n\t\tval.borderColor = val.borderColor || cc.color(255,0,0,255);\n\t\tval.border = val.border || cc.color(255,0,0,255);\n\t\tval.fillColor = val.fillColor || cc.color(255,0,0,255);\n\t\tif(this.getChildByTag(tag)!=null){\n\t\t\tthis.removeChildByTag(tag);\n\t\t}\n\t\tvar rect = new cc.DrawNode();\n\t\tthis.setTag(rect);\n\t\trect.setTag(tag);\n\t\tvar points = [\n\t\t\tcc.p(x,y),\n\t\t\tcc.p(x+width,y),\n\t\t\tcc.p(x+width,y+height),\n\t\t\tcc.p(x,y+height)\n\t\t];\n\t\trect.drawPoly(points,fillColor,border,borderColor);\n\t\tthis.addChild(rect);\n\t},\n\n});",
-			"file": "gameweb/src/view/AnimationLayer.js",
-			"file_size": 3491,
-			"file_write_time": 131116553908313303,
+			"file": "gameweb/src/app.js",
 			"settings":
 			{
-				"buffer_size": 3511,
+				"buffer_size": 1048,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "gameweb/src/view/picFrameCache.js",
+			"file": "gameweb/src/view/PlayScene.js",
 			"settings":
 			{
-				"buffer_size": 880,
+				"buffer_size": 196,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gameweb/src/view/StatusLayer.js",
+			"settings":
+			{
+				"buffer_size": 1021,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gameweb/res/image/button/plist.plist",
+			"settings":
+			{
+				"buffer_size": 6351,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gameweb/project.json",
+			"settings":
+			{
+				"buffer_size": 385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "labelCoin:null,\n\tlabelMeter:null,\n\tcoins:0,\n\twinsize:cc.winSize,\n    ctor:function(){\n        this._super();\n        this.init();\n    },\n    init:function(){\n        this._super();\n\t\t/*this.labelCoin = cc.LabelTTF.create(\"Coins:0\",\"Helvetica\",20);\n\t\tthis.labelCoin.setColor(cc.color(0,0,0));\n\t\tthis.labelCoin.setPosition(cc.p(70,winsize.height-20));\n\t\tthis.addChild(this.labelCoin);\n\t\tthis.labelMeter = cc.LabelTTF.create(\"0M\",\"Helvetica\",20);\n\t\tthis.labelMeter.setPosition(cc.p(winsize.width - 70,winsize.height - 20));\n\t\tthis.addChild(this.labelMeater);*/\n\t\t// this.itemArr = new Array();\n        // 初始化10个子layer，每一项的显示\n        /*for (var i = 0; i < 10; i++) {\n            var layer = new cc.LayerColor();\n            layer.width = cc.winSize.width/2 -30;\n            // layer.width = 100;\n            layer.height = 100;\n            layer.setColor(cc.color(255, 255, 255, 255));\n            this.itemArr.push(layer);\n        }\n        // 初始化滚动layer，其纵坐标由子layer高度决定\n        var scrollLayer = new cc.LayerColor();\n        scrollLayer.setColor(cc.color(255, 68, 68, 255));\n        scrollLayer.width = cc.winSize.width/2;\n        scrollLayer.height = 115 * this.itemArr.length;\n        scrollLayer.setPosition(cc.winSize.width/4, cc.winSize.height - scrollLayer.height);\n        for (var i = 0; i <  this.itemArr.length; i++) {\n            this.itemArr[i].setPosition((scrollLayer.width/2-this.itemArr[i].width/2),15+(this.itemArr[i].height+15)*i);\n            scrollLayer.addChild(this.itemArr[i]);\n        }\n        this.addChild(scrollLayer);*/\n\t}",
+			"settings":
+			{
+				"buffer_size": 1549,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -60,19 +93,54 @@
 	"expanded_folders":
 	[
 		"/D/gitgame/gameweb/gameweb",
+		"/D/gitgame/gameweb/gameweb/bf",
+		"/D/gitgame/gameweb/gameweb/lib",
+		"/D/gitgame/gameweb/gameweb/res",
+		"/D/gitgame/gameweb/gameweb/res/data",
+		"/D/gitgame/gameweb/gameweb/res/image",
+		"/D/gitgame/gameweb/gameweb/res/image/button",
+		"/D/gitgame/gameweb/gameweb/res/image/pic/guard",
 		"/D/gitgame/gameweb/gameweb/src",
-		"/D/gitgame/gameweb/gameweb/src/view"
+		"/D/gitgame/gameweb/gameweb/src/view",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/ActionsTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LabelTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LayerTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LoaderTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/web"
 	],
 	"file_history":
 	[
+		"/D/gitgame/gameweb/gameweb/src/view/AnimationLayer.js",
+		"/D/gitgame/gameweb/gameweb/src/main.js",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LabelTest/LabelTest.js",
+		"/D/gitgame/gameweb/gameweb/src/view/testScollview",
+		"/D/gitgame/gameweb/gameweb/src/app.js",
+		"/D/gitgame/gameweb/gameweb/src/view/picFrameCache.js",
+		"/D/gitgame/gameweb/gameweb/src/resource.js",
+		"/D/gitgame/gameweb/gameweb/src/view/ts.js",
+		"/D/gitgame/gameweb/gameweb/lib/cocos2d-js-v3.11.js",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/web/cocos2d/core/scenes/CCLoaderScene.js",
+		"/D/gitgame/gameweb/gameweb/src/view/StatusLayer.js",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/ActionsTest/ActionsTest.js",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/index.html",
+		"/D/gitgame/gameweb/gameweb/res/image/pic/guard/mobs3.plist",
+		"/D/gitgame/gameweb/versions.md",
+		"/D/gitgame/gameweb/gameweb/lib/v3.md",
+		"/D/gitgame/gameweb/gameweb/res/image/pic/guard/mobs1.plist",
+		"/D/gitgame/gameweb/gameweb/project.json",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/cocos/scripting/js-bindings/auto/api/jsb_cocos2dx_auto_api.js"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
@@ -82,6 +150,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"loader.load",
+			"_plistLoader",
+			"loader.load",
+			"cc.game",
+			"load:func",
+			"loader.load",
+			"loader",
+			"size",
+			"testNames",
+			"LabelAtlas",
+			"RepeatForever",
+			"CCRepeatForever",
+			"repeat",
+			"sequence.repeat",
+			":{},\n",
+			"_plist",
+			");\n",
+			"animatPic",
+			"obj.",
+			"assert",
+			"addImage",
+			"_png",
+			"addImage",
+			"addSpriteFrames",
+			"../../",
+			"addImageAsync",
+			"addImage",
+			"addImageAsync"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -99,53 +195,82 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gameweb/src/view/AnimationLayer.js",
+					"file": "gameweb/src/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3511,
+						"buffer_size": 1048,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1344,
-								1344
+								864,
+								864
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 780.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "gameweb/src/view/picFrameCache.js",
+					"file": "gameweb/src/view/PlayScene.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 880,
+						"buffer_size": 196,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								397,
-								410
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "gameweb/src/view/StatusLayer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
 							]
 						],
 						"settings":
@@ -160,13 +285,102 @@
 					},
 					"stack_index": 0,
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "gameweb/res/image/button/plist.plist",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4919,
+								4933
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2280.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "gameweb/project.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								349,
+								349
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -203,7 +417,7 @@
 	"project": "gw.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -241,7 +455,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 215.0,
+	"side_bar_width": 224.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

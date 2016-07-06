@@ -8,24 +8,88 @@ var AnimationLayer = cc.Layer.extend({
 		this.init();
 	},
 	init: function () {
+		/**
+		*定义角色资源
+		*/
+		this._super;
+		var self = this;
+		var guard_plist_1 = "res/image/guard/guard1.plist";
+        var guard_pic_1 = "res/image/guard/guard1.png";
+        var guard_plist_2 = "res/image/guard/guard2.plist";
+        var guard_pic_2 = "res/image/guard/guard2.png";
+        var guard_plist_3 = "res/image/guard/guard3.plist";
+        var guard_pic_3 = "res/image/guard/guard3.png";
 
-		cc.spriteFrameCache.addSpriteFrames("../res/image/pic/guard/guard1.plist");//res.guard1_plist
-		var frames = [];
-		for(var n =1;n<5;n++){
-			var sf = cc.spriteFrameCache.getSpriteFrame("guard1_0"+n+".png");
-			frames.push(sf);
-		}
-		var animation = new cc.Animation(frames,0.2);
-		var animate=new cc.animate(animation);
+        var plist_4 = "res/image/guard/guard1.plist";
+        var pic_4 = "res/image/guard/guard1.png"; 
+        var plist_5 = "res/image/guard/guard1.plist";
+        var pic_5 = "res/image/guard/guard1.png"; 
+        var plist_6 = "res/image/guard/guard1.plist";
+        var pic_6 = "res/image/guard/guard1.png"; 
+        var plist_7 = "res/image/guard/guard1.plist";
+        var pic_7 = "res/image/guard/guard1.png"; 
+        var plist_8 = "res/image/guard/guard1.plist";
+        var pic_8 = "res/image/guard/guard1.png"; 
 
-		var spBatch = new cc.SpriteBatchNode(res.guard1_png);
-		this.addChild(spBatch,1);
-		var sp1 = new cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("guard1_01.png"));
-		sp1.setPosition(50,500);
-		spBatch.addChild(sp1,3);
-		sp1.runAction(animate.repeatForever());
-		this.loadAllPic();
-		this.createLabel();
+        var res1 = [guard_plist_1,guard_pic_1];
+        var res2 = [guard_plist_2,guard_pic_2];
+        var res3 = [guard_plist_3,guard_pic_3];
+        /**
+        *创建并添加角色
+        */
+        cc.loader.load(res1, function(){
+        	cc.spriteFrameCache.addSpriteFrames(guard_plist_1);
+			spriteFrames = [];
+			for(var n=0;n<=5;n++){
+				var png = "guard1_0"+n+".png";
+		    	var frames = cc.spriteFrameCache.getSpriteFrame(png);
+		    	if(frames) {
+		    		spriteFrames.push(frames);
+		    	}
+			}
+			animation = new cc.Animation(spriteFrames,0.2);
+			action = cc.animate(animation);
+			var sp = cc.Sprite.create(frames);
+			self.addChild(sp,5);
+			sp.setPosition(60,300);
+			sp.runAction(action.repeatForever());
+        });
+
+        cc.loader.load(res2, function(){
+        	cc.spriteFrameCache.addSpriteFrames(guard_plist_2);
+			spriteFrames = [];
+			for(var n=0;n<=5;n++){
+				var png = "guard2_0"+n+".png";
+		    	var frames = cc.spriteFrameCache.getSpriteFrame(png);
+		    	if(frames) {
+		    		spriteFrames.push(frames);
+		    	}
+			}
+			animation = new cc.Animation(spriteFrames,0.2);
+			action = cc.animate(animation);
+			var sp = cc.Sprite.create(frames);
+			self.addChild(sp,5);
+			sp.setPosition(60,400);
+			sp.runAction(action.repeatForever());
+        });
+
+        cc.loader.load(res3, function(){
+        	cc.spriteFrameCache.addSpriteFrames(guard_plist_3);
+			spriteFrames = [];
+			for(var n=0;n<=5;n++){
+				var png = "guard3_0"+n+".png";
+		    	var frames = cc.spriteFrameCache.getSpriteFrame(png);
+		    	if(frames) {
+		    		spriteFrames.push(frames);
+		    	}
+			}
+			animation = new cc.Animation(spriteFrames,0.2);
+			action = cc.animate(animation);
+			sp = cc.Sprite.create(frames);
+			self.addChild(sp,5);
+			sp.setPosition(60,500);
+			sp.runAction(action.repeatForever());
+        });
 	},
 	createLabel : function(){
 		var self = this;

@@ -12,6 +12,7 @@
     "src/view/picFrameCache.js",
     "src/view/PlayScene.js",
     "src/view/BackgroundLayer.js",
-    "src/view/AnimationLayer.js"
+    "src/view/AnimationLayer.js",
+    "src/view/StatusLayer.js"
   ]
 }
