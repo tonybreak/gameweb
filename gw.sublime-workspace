@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"crea",
+				"createUpgradeMenu"
+			],
+			[
+				"upg",
+				"upgradeMenuItemCallback"
+			],
+			[
+				"task",
+				"taskMenuItem"
+			],
+			[
+				"rank",
+				"rankMenuItem"
+			],
+			[
+				"mark",
+				"marketMenuItem"
+			],
+			[
+				"button_up",
+				"button_upgrade2"
+			],
+			[
+				"Men",
+				"MenuItemSprite"
+			],
+			[
+				"gur",
+				"guard1_01"
+			],
+			[
+				"mar",
+				"market2"
+			],
+			[
 				"s_c",
 				"s_Cowboy_png"
 			]
@@ -20,10 +56,18 @@
 			}
 		},
 		{
-			"file": "gameweb/src/view/PlayScene.js",
+			"file": "gameweb/lib/cocos2d-js-v3.11.js",
 			"settings":
 			{
-				"buffer_size": 196,
+				"buffer_size": 3657498,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gameweb/src/view/AnimationLayer.js",
+			"settings":
+			{
+				"buffer_size": 7754,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,32 +75,26 @@
 			"file": "gameweb/src/view/StatusLayer.js",
 			"settings":
 			{
-				"buffer_size": 1021,
+				"buffer_size": 5597,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "gameweb/res/image/button/plist.plist",
+			"file": "gameweb/test/cocos2d-x-3/tests/js-tests/src/IntervalTest/IntervalTest.js",
 			"settings":
 			{
-				"buffer_size": 6351,
+				"buffer_size": 4723,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "gameweb/project.json",
+			"contents": "Searching 5287 files for \"musicFile\"\n\nD:\\gitgame\\gameweb\\gameweb\\test\\cocos2d-x-3\\cocos\\audio\\tizen\\SimpleAudioEngineTizen.cpp:\n   54  \n   55  static int s_bgAudioID = AudioEngine::INVALID_AUDIO_ID;\n   56: static std::string bgMusicFilePath;\n   57  //////////////////////////////////////////////////////////////////////////\n   58  // BackgroundMusic\n   ..\n   68      if (pszFilePath)\n   69      {\n   70:         bgMusicFilePath = pszFilePath;\n   71          s_bgAudioID = AudioEngine::play2d(pszFilePath,bLoop,s_bgMusicVolume);\n   72      }\n   ..\n   87  void SimpleAudioEngine::rewindBackgroundMusic() {\n   88      AudioEngine::stop(s_bgAudioID);\n   89:     if (!bgMusicFilePath.empty())\n   90      {\n   91:         s_bgAudioID = AudioEngine::play2d(bgMusicFilePath);\n   92      }\n   93  }\n   ..\n  107  \n  108  void SimpleAudioEngine::preloadBackgroundMusic(const char* pszFilePath) {\n  109:     bgMusicFilePath = pszFilePath;\n  110  }\n  111  \n\nD:\\gitgame\\gameweb\\gameweb\\test\\cocos2d-x-3\\tests\\js-tests\\src\\CocosDenshionTest\\CocosDenshionTest.js:\n  232  var playMusic = function () {\n  233      cc.log(\"play background music\");\n  234:     var musicFile = MUSIC_FILE;\n  235:     audioEngine.playMusic(musicFile, false);\n  236  };\n  237  \n\n7 matches across 2 files\n",
 			"settings":
 			{
-				"buffer_size": 385,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "labelCoin:null,\n\tlabelMeter:null,\n\tcoins:0,\n\twinsize:cc.winSize,\n    ctor:function(){\n        this._super();\n        this.init();\n    },\n    init:function(){\n        this._super();\n\t\t/*this.labelCoin = cc.LabelTTF.create(\"Coins:0\",\"Helvetica\",20);\n\t\tthis.labelCoin.setColor(cc.color(0,0,0));\n\t\tthis.labelCoin.setPosition(cc.p(70,winsize.height-20));\n\t\tthis.addChild(this.labelCoin);\n\t\tthis.labelMeter = cc.LabelTTF.create(\"0M\",\"Helvetica\",20);\n\t\tthis.labelMeter.setPosition(cc.p(winsize.width - 70,winsize.height - 20));\n\t\tthis.addChild(this.labelMeater);*/\n\t\t// this.itemArr = new Array();\n        // 初始化10个子layer，每一项的显示\n        /*for (var i = 0; i < 10; i++) {\n            var layer = new cc.LayerColor();\n            layer.width = cc.winSize.width/2 -30;\n            // layer.width = 100;\n            layer.height = 100;\n            layer.setColor(cc.color(255, 255, 255, 255));\n            this.itemArr.push(layer);\n        }\n        // 初始化滚动layer，其纵坐标由子layer高度决定\n        var scrollLayer = new cc.LayerColor();\n        scrollLayer.setColor(cc.color(255, 68, 68, 255));\n        scrollLayer.width = cc.winSize.width/2;\n        scrollLayer.height = 115 * this.itemArr.length;\n        scrollLayer.setPosition(cc.winSize.width/4, cc.winSize.height - scrollLayer.height);\n        for (var i = 0; i <  this.itemArr.length; i++) {\n            this.itemArr[i].setPosition((scrollLayer.width/2-this.itemArr[i].width/2),15+(this.itemArr[i].height+15)*i);\n            scrollLayer.addChild(this.itemArr[i]);\n        }\n        this.addChild(scrollLayer);*/\n\t}",
-			"settings":
-			{
-				"buffer_size": 1549,
-				"line_ending": "Windows"
+				"buffer_size": 1264,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
 			}
 		}
 	],
@@ -98,22 +136,41 @@
 		"/D/gitgame/gameweb/gameweb/res",
 		"/D/gitgame/gameweb/gameweb/res/data",
 		"/D/gitgame/gameweb/gameweb/res/image",
-		"/D/gitgame/gameweb/gameweb/res/image/button",
-		"/D/gitgame/gameweb/gameweb/res/image/pic/guard",
+		"/D/gitgame/gameweb/gameweb/res/image/pic",
 		"/D/gitgame/gameweb/gameweb/src",
 		"/D/gitgame/gameweb/gameweb/src/view",
+		"/D/gitgame/gameweb/gameweb/test",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/ActionManagerTest",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/ActionsTest",
-		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LabelTest",
-		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LayerTest",
-		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LoaderTest",
-		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/web"
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/BakeLayerTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/BaseTestLayer",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/BillBoardTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/CocosDenshionTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/DrawPrimitivesTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/EaseActionsTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/EffectsAdvancedTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/EffectsTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/EventTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/ExtensionsTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/FontTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/IntervalTest",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/UnitTest"
 	],
 	"file_history":
 	[
+		"/D/MyWork/手游戏/JK-GameCenter-SDK-Android-V1.0.3/gamecenterh5-lib/AndroidManifest.xml",
+		"/D/MyWork/手游戏/JK-GameCenter-SDK-Android-V1.0.3/gamecenterh5-lib/res/raw/jkframe_api_meta.xml",
+		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/UnitTest/UnitTest.js",
+		"/D/gitgame/gameweb/gameweb/src/view/PlayScene.js",
+		"/D/work/createjs/EaselJS-0.8.0/EaselJS-0.8.1/examples/Filters.html",
+		"/D/gitgame/gameweb/gameweb/project.json",
+		"/D/gitgame/gameweb/gameweb/res/image/button/guard1.plist",
+		"/D/gitgame/gameweb/gameweb/res/image/button/plist.plist",
+		"/D/gitgame/gameweb/gameweb/res/image/button/button_plist.plist",
 		"/D/gitgame/gameweb/gameweb/src/view/AnimationLayer.js",
 		"/D/gitgame/gameweb/gameweb/src/main.js",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/tests/js-tests/src/LabelTest/LabelTest.js",
@@ -131,7 +188,6 @@
 		"/D/gitgame/gameweb/versions.md",
 		"/D/gitgame/gameweb/gameweb/lib/v3.md",
 		"/D/gitgame/gameweb/gameweb/res/image/pic/guard/mobs1.plist",
-		"/D/gitgame/gameweb/gameweb/project.json",
 		"/D/gitgame/gameweb/gameweb/test/cocos2d-x-3/cocos/scripting/js-bindings/auto/api/jsb_cocos2dx_auto_api.js"
 	],
 	"find":
@@ -143,6 +199,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -150,6 +207,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"musicFile",
+			"playMusic",
+			"playFunc",
+			"playMusic",
+			"onExit",
+			"DenshionTests",
+			"_planeColor",
+			"ClippingNode",
+			"shape",
+			"actionRotate",
+			"getTestNumber",
+			"numberOfPendingTests",
+			"ClippingNodeTestScene",
+			"onRestartCallback",
+			"TestController",
+			"rootLayer",
+			"BakeLayerTest1",
+			"nextBakeLayerTest",
+			"s_pathGrossini",
+			"cc.ScrollViewLoader",
+			"this.",
+			"ScrollView",
+			"loadAllPic",
+			"animatPic",
+			"makert",
+			"this",
+			"self.",
+			"button_png",
+			"plist",
+			"plist.png",
+			"\",\n",
 			"loader.load",
 			"_plistLoader",
 			"loader.load",
@@ -195,7 +283,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -211,8 +299,8 @@
 						"selection":
 						[
 							[
-								864,
-								864
+								434,
+								446
 							]
 						],
 						"settings":
@@ -222,55 +310,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "gameweb/src/view/PlayScene.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								147,
-								147
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 228.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "gameweb/src/view/StatusLayer.js",
+					"buffer": 1,
+					"file": "gameweb/lib/cocos2d-js-v3.11.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1021,
+						"buffer_size": 3657498,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								284,
-								284
+								1682359,
+								1682359
 							]
 						],
 						"settings":
@@ -280,70 +340,99 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 780224.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "gameweb/res/image/button/plist.plist",
+					"buffer": 2,
+					"file": "gameweb/src/view/AnimationLayer.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6351,
+						"buffer_size": 7754,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4919,
-								4933
+								1931,
+								1931
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2280.0,
+						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "gameweb/project.json",
+					"buffer": 3,
+					"file": "gameweb/src/view/StatusLayer.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 385,
+						"buffer_size": 5597,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								349,
-								349
+								5025,
+								5025
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 863.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "gameweb/test/cocos2d-x-3/tests/js-tests/src/IntervalTest/IntervalTest.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2652,
+								2652
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1197.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -351,25 +440,66 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1549,
+						"buffer_size": 1264,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										227,
+										236
+									],
+									[
+										414,
+										423
+									],
+									[
+										665,
+										674
+									],
+									[
+										752,
+										761
+									],
+									[
+										898,
+										907
+									],
+									[
+										1144,
+										1153
+									],
+									[
+										1201,
+										1210
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								64,
-								45
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.y": 331.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -455,7 +585,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 224.0,
+	"side_bar_width": 258.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
